@@ -50,20 +50,14 @@ class EntityReader
         $annotations = $annotationReader->getPropertyAnnotations($reflectionProperty);
         foreach ($annotations as $annotation) {
             $annotationClassName = get_class($annotation);
-            if ($annotationClassName == 'Doctrine\ORM\Mapping\Id') {
-                return false;
-            } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\Column') {
+            if ($annotationClassName == 'Doctrine\ORM\Mapping\Column' || $annotationClassName == 'Doctrine\ORM\Mapping\Id') {
                 $property->setAnnotation($annotation);
                 $property->setType(Property::PROPERTY_TYPE_COLUMN);
-            } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\ManyToOne'
-                || $annotationClassName == 'Doctrine\ORM\Mapping\OneToOne'
-            ) {
+            } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\ManyToOne' || $annotationClassName == 'Doctrine\ORM\Mapping\OneToOne') {
                 $property->setAnnotation($annotation);
                 $property->setType(Property::PROPERTY_TYPE_REF_ONE);
                 $property->setTargetEntity($annotation->targetEntity);
-            } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\ManyToMany'
-                || $annotationClassName == 'Doctrine\ORM\Mapping\OneToMany'
-            ) {
+            } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\ManyToMany' || $annotationClassName == 'Doctrine\ORM\Mapping\OneToMany') {
                 $property->setAnnotation($annotation);
                 $property->setType(Property::PROPERTY_TYPE_REF_MANY);
                 $property->setTargetEntity($annotation->targetEntity);

@@ -9,9 +9,10 @@ namespace DoctrineEntityReader;
  */
 class Property
 {
-    const PROPERTY_TYPE_COLUMN = 0;
-    const PROPERTY_TYPE_REF_ONE = 1;
-    const PROPERTY_TYPE_REF_MANY = 2;
+    const PROPERTY_TYPE_ID = 0;
+    const PROPERTY_TYPE_COLUMN = 1;
+    const PROPERTY_TYPE_REF_ONE = 2;
+    const PROPERTY_TYPE_REF_MANY = 3;
     
     protected $name;
     protected $annotation;
