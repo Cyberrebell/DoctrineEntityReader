@@ -22,7 +22,6 @@ class Property
      * Set the Name of Entity-Property
      * 
      * @param string $name Property-Name
-     * 
      * @return null
      */
     public function setName($name)
@@ -45,7 +44,6 @@ class Property
      * stored for extended information about property
      *
      * @param string $annotation Defining Annotation of Entity-Property
-     *
      * @return null
      */
     public function setAnnotation($annotation)
@@ -69,7 +67,6 @@ class Property
      * The constants of Property-Class are possible Types
      *
      * @param string $type Class-Constant
-     *
      * @return null
      */
     public function setType($type)
@@ -93,7 +90,6 @@ class Property
      * (is only set if Type is PROPERTY_TYPE_TOONE or PROPERTY_TYPE_TOMANY)
      *
      * @param string $targetEntity Entity-Namespace
-     *
      * @return null
      */
     public function setTargetEntity($targetEntity)
