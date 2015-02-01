@@ -10,8 +10,8 @@ namespace DoctrineEntityReader;
 class Property
 {
     const PROPERTY_TYPE_COLUMN = 0;
-    const PROPERTY_TYPE_TOONE = 1;
-    const PROPERTY_TYPE_TOMANY = 2;
+    const PROPERTY_TYPE_REF_ONE = 1;
+    const PROPERTY_TYPE_REF_MANY = 2;
     
     protected $name;
     protected $annotation;

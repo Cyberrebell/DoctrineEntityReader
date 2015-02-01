@@ -59,13 +59,13 @@ class EntityReader
                 || $annotationClassName == 'Doctrine\ORM\Mapping\OneToOne'
             ) {
                 $property->setAnnotation($annotation);
-                $property->setType(Property::PROPERTY_TYPE_TOONE);
+                $property->setType(Property::PROPERTY_TYPE_REF_ONE);
                 $property->setTargetEntity($annotation->targetEntity);
             } elseif ($annotationClassName == 'Doctrine\ORM\Mapping\ManyToMany'
                 || $annotationClassName == 'Doctrine\ORM\Mapping\OneToMany'
             ) {
                 $property->setAnnotation($annotation);
-                $property->setType(Property::PROPERTY_TYPE_TOMANY);
+                $property->setType(Property::PROPERTY_TYPE_REF_MANY);
                 $property->setTargetEntity($annotation->targetEntity);
             }
         }
